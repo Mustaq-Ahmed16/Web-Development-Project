@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <title>Image Gallkery</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding :0px;
+            box-sizing: border-box;
+        }
+
+        body{
+
+           
+            background-color: aliceblue;
+            padding: 45px;
+        }
+	.header
+	{
+          text-align:center;
+	  font-family:sans-serif;
+	  background-color:cyan;
+	  text-shadow: rgba(0,0,0,0.25) 0px 5px 15px;
+	}
+	#image-gallery
+	{
+	   width:35rem;
+	   margin:4rem auto;
+	}
+        #main-image
+        {
+	    width:100%;
+	    
+
+            padding: 1rem;
+            background-color: antiquewhite;
+	    box-shadow:rgba(0,0,0,0.08) 0px 4px 12px;
+           
+
+        }
+        #thumbnail-container
+        {
+            
+            margin-top: 2rem;
+            flex:center;
+            justify-content:center;
+        }
+        .thumbnail
+	{
+	    width:100px;
+	    height:100px;
+	    margin:0 10px;
+	    cursor: pointer;
+	}
+    </style>
+</head>
+<body>
+	<div class="header">
+	<h1> Simple Image Gallery</h1>
+	</div>
+    
+        <div id="image-gallery">
+            <img src="oop7.jpg" alt="" id="main-image"/>
+        </div>
+       <div id="thumbnail-container">
+        <img class="thumbnail" src="oop2.jpg" alt="" id="image1"/>
+        <img class="thumbnail" src="oop3.jpg" alt="" id="image2"/>
+        <img class="thumbnail" src="oop4.jpg" id="image3" alt=""/>
+        <img class="thumbnail" src="oop5.jpg" id="image4" alt=""/>
+        <img class="thumbnail" src="oop6.jpg" id="image5" alt=""/>
+        <img class="thumbnail" src="oop2.jpg" id="image6" alt=""/>
+
+       </div>
+       <script>
+	let thumbnails=document.querySelectorAll(".thumbnail");
+	let mainImage=document.getElementById("main-image");
+	for(let i=0;i<thumbnails.length;i++)
+	{
+		thumbnails[i].addEventListener('click',function() {
+mainImage.src=this.src;
+	}
+	);
+	}
+       </script>
+	 
+    
+</body>
+</html>
